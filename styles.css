@@ -1,0 +1,67 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Verdana, "san-serif";
+}
+
+p {
+    font-size: 14px;
+}
+
+body {
+    min-width: 550px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.loading {
+    margin: 200px 0 0;
+    text-align: center;
+}
+
+.loading img {
+    padding-bottom: 20px;
+}
+
+.loading span {
+    font-size: 20px;
+    color: #8b8b8b;
+}
+
+.tooltip-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.candidate-square {
+    display: inline-block;
+    margin-right: 5px;
+    height: 10px;
+    width: 10px;
+}
+
+.candidate-square.type0 {
+    background-color: #3689d6;
+}
+
+.candidate-square.type1 {
+    background-color: #e55253;
+}
+
+.candidate-square.type2 {
+    background-color: #d8c7a7;
+}
+
+.candidate-bold {
+    font-weight: bold;
+}
+
+.electoral-votes {
+    border-top: 1px solid lightgrey;
+    margin-top: 10px;
+    padding-top: 5px;
+}
