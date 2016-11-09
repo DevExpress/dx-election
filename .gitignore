@@ -1,47 +1,32 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Folder config file
-Desktop.ini
+src/data/source
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# compiled output
+/dist
+/tmp
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+# dependencies
+/node_modules
+/bower_components
 
-# Windows shortcuts
-*.lnk
+# IDEs and editors
+/.idea
+/.vscode
+.project
+.classpath
+*.launch
+.settings/
 
-# =========================
-# Operating System Files
-# =========================
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
 
-# OSX
-# =========================
-
+#System Files
 .DS_Store
-.AppleDouble
-.LSOverride
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+Thumbs.db

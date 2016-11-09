@@ -1,0 +1,55 @@
+<div class="state-chart">
+    <dx-scroll-view [height]="660" class="scroll-view">
+        <dx-chart 
+            class="votes-chart"
+            [dataSource]="statesChartData"
+            [commonAxisSettings]="{
+                grid: { 
+                    visible: false 
+                }
+            }"
+            [barWidth]="0.9"
+            [series]= "[{
+                valueField: 'VotesPercent0',
+                color: '#3688d5'
+            }, {
+                valueField: 'VotesPercent1',
+                color: '#e45252'
+            }]"
+            [valueAxis]="{
+                valueMarginsEnabled: false,
+                max: 100,
+                label: {
+                    visible: false,
+                    overlappingBehavior: 'ignore'
+                }
+            }"
+            [argumentAxis]= "{
+                inverted: true,
+                label:{
+                    customizeText: customizeArgLabelText,
+                    font: {
+                        size: 13
+                    }
+                }
+            }"
+            [commonSeriesSettings]="{
+                argumentField: 'name',
+                type: 'bar',
+                label: {
+                    visible: true,
+                    backgroundColor: 'none',
+                    customizeText: customizeVoteLabelText,
+                    font: {
+                        size: 12
+                    }
+                }
+            }"
+            [size]="{
+                height: statesChartData.length * 60
+            }"
+            [legend]="{ visible: false }"
+            [rotated]="true">
+        </dx-chart>
+    </dx-scroll-view>
+</div>

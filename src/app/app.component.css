@@ -1,0 +1,64 @@
+header,
+.content,
+footer {
+    margin: 0 40px;
+}
+
+.content {
+    padding: 60px 0;
+    font-size: 0;
+}
+
+.content .left-side {
+    width: 60%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.content .left-side p {
+    text-align: justify;
+}
+
+.content .right-side {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+header {
+    font-size: 35px;
+    line-height: 40px;
+    border-bottom: 1px solid #f2f2f2;
+    background-image: url(images/flag-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.header-gradient {
+    padding: 29px 0;
+    max-width: 700px;
+    background: linear-gradient(to right, #fff 0%, #fff 55%, rgba(255, 255, 255, 0) 100%);
+}
+
+header .name {
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+footer {
+    height: 35px;
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+@media screen and (max-width: 1160px) {
+    .content .left-side,
+    .content .right-side {
+        width: 100%;
+    }
+
+    .content .right-side {
+        margin-top: 80px;
+    }
+}

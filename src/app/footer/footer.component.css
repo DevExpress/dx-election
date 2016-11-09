@@ -1,0 +1,28 @@
+.copy {
+    font-size: 12px;
+    color: #a1a1a1;
+    padding: 10px 0;
+}
+
+.dx-copy {
+    padding: 10px 0;
+    border-top: 1px solid #f2f2f2;
+}
+
+.dx-copy p, a {
+    color: #8b8b8b;
+}
+
+.dx-copy .logo {
+    float: right;
+    background-image: url(images/footer-logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 157px;
+    height: 35px;
+}
+
+.copy p {
+    margin: 0;
+    font-size: 13px;
+}

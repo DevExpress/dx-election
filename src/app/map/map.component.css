@@ -1,0 +1,21 @@
+.map {
+    display: block;
+    clear: both;
+    margin-top: 30px;
+    height: 420px;
+}
+
+.back-button,
+.center-button {
+    position: relative;
+    top: 44px;
+    color: #808080;
+}
+
+.back-button {
+    float: left;
+}
+
+.center-button {
+    float: right;
+}

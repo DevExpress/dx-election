@@ -1,0 +1,54 @@
+<div class="left-chart-wrapper" *ngIf="nationData">
+    <div class="photo left">
+        <div class="wrapper" [ngClass]="nationData?.d?.name.replace(' ', '')"></div>
+        <div class="text" [innerHtml]="nationData?.d?.name"></div>
+    </div>
+    <div class="photo right">
+        <div class="wrapper" [ngClass]="nationData?.r?.name.replace(' ', '')"></div>
+        <div class="text" [innerHtml]="nationData?.r?.name"></div>
+    </div>
+    <div class="data">
+        <div class="electoral">
+            <div class="center">270</div>
+            <div class="left">
+                <span class="description">Electoral Votes</span><br /><span class="number" [innerHtml]="nationData?.d?.electoral"></span>
+            </div>
+            <div class="right">
+                <span class="description">Electoral Votes</span><br /><span class="number" [innerHtml]="nationData?.r?.electoral"></span>
+            </div>
+        </div>
+        <dx-chart 
+            class="big-chart"
+            [animation]="{ enabled: false }"
+            [dataSource]="chartData"
+            [commonSeriesSettings]="{
+                argumentField: 'votesType',
+                type: 'fullStackedBar'
+            }"
+            [commonAxisSettings]="{
+                grid: { 
+                    visible: false 
+                },
+                label: {
+                    visible: false
+                }
+            }"
+            [series]="series"
+            [legend]="{ visible: false }"
+            [rotated]="true">
+        </dx-chart>
+        <div class="electoral">
+            <div class="center">50%</div>
+            <div class="left">
+                <span class="number" [innerHtml]="nationData?.d?.percent | percent:'1.0-0'"></span><br />
+                <span class="description" [innerHtml]="nationData?.d?.votes | number"></span>
+                <span class="description">&nbsp;votes</span>
+            </div>
+            <div class="right">
+                <span class="number" [innerHtml]="nationData?.r?.percent | percent:'1.0-0'"></span><br />
+                <span class="description" [innerHtml]="nationData?.r?.votes | number"></span>
+                <span class="description">&nbsp;votes</span>
+            </div>
+        </div>
+    </div>
+</div>

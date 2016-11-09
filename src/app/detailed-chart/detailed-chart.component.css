@@ -1,0 +1,13 @@
+.state-chart {
+    margin-left: 60px;
+    margin-top: -9px;
+}
+
+.state-chart .votes-chart {
+    display: block;
+    width: 100%;
+}
+
+.scroll-view {
+    display: block;
+}

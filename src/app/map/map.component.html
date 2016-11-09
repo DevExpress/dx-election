@@ -1,0 +1,51 @@
+<dx-button class="back-button" text="Back to States" width="120" (click)="backToStates()" [visible]="showBackButton"></dx-button>
+<dx-button class="center-button" text="Center Map" width="120" (click)="centerMap()" [disabled]="isMapCentered" ></dx-button>
+<dx-vector-map 
+    class="map" 
+    [bounds]="bounds" 
+    [controlBar]="{ enabled: false }" 
+    [size]="{ height: 420, width: '100%' }" 
+    [layers]="[{
+        dataSource: dataSource,
+        opacity: usaLayerOpacity,
+        type: 'area',
+        colorGroupingField: 'democracy' + year,
+        colorGroups: [0, 0.5, 1],
+        palette: [ '#3689d6', '#e55253' ],
+        label: {
+            enabled: true,
+            dataField: 'NAME',
+            'stroke-opacity': 0.3,
+            'stroke': '#000',
+            font: {
+                size: 12,
+                color: '#fff'
+            }
+        }
+    },{
+        dataSource: countyDataSource,
+        type: 'area',
+        colorGroupingField: 'democracy' + year,
+        colorGroups: [0, 0.5, 1],
+        palette: [ '#3689d6', '#e55253' ],
+        label: {
+            enabled: true,
+            dataField: 'NAME',
+            'stroke-opacity': 0.3,
+            'stroke': '#000',
+            font: {
+                size: 12,
+                color: '#fff'
+            }
+        }
+    }]"
+    [tooltip]="tooltip" 
+    [title]="{
+        text: title,
+        subtitle: subtitle
+    }"
+    [background]="{ borderColor: '#fff' }"
+    (onClick)="mapClick($event)"
+    (onInitialized)="initialized($event)"
+    (onCenterChanged)="centerChanged($event)">
+</dx-vector-map>

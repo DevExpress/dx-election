@@ -1,0 +1,26 @@
+.years {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.years .year {
+    display: inline-block;
+    margin-right: 25px;
+    margin-bottom: -31px;
+    padding-bottom: 31px;
+    cursor: pointer;
+}
+
+.years .year.active {
+    color: #3689d6;
+    cursor: default;
+    background-image: url(images/arrow.png);
+    background-size: 26px 18px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.years .year.disabled {
+    cursor: not-allowed;
+    color: #eee;
+}

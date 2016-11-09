@@ -1,0 +1,18 @@
+<header>
+    <div class="header-gradient">
+        <div class="name">Election</div>
+        <app-year-switcher [year]="currentYear" (onYearChanged)="yearChanged($event)"></app-year-switcher>
+    </div>
+</header>
+<div class="content">
+    <section class="left-side">
+        <app-basic-results [year]="currentYear"></app-basic-results>
+        <app-map [year]="currentYear" (onViewChanged)="mapChanged($event)"></app-map>
+    </section>
+    <section class="right-side">
+        <app-detailed-chart [year]="currentYear" [data]="data"></app-detailed-chart>
+    </section>
+</div>
+<footer>
+    <app-footer></app-footer>
+</footer>
