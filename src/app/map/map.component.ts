@@ -134,15 +134,20 @@ export class MapComponent {
 
         html += votesString;
 
-        electoralVotes.forEach(vote => {
-            electoralVotesString += (
-                '<div class="electoral-votes">' +
-                '<span class="candidate-square type' + vote.type + '"></span>' +
-                '<span class="candidate-bold">' + vote.electoralVotes + '</span> electoral votes going to ' +
-                '<span class="candidate-bold">' + vote.name + '</span> ' +
-                '</div>'
-            );
-        });
+        if(electoralVotes.length > 0) {
+            electoralVotesString += '<div class="electoral-votes">';
+
+            electoralVotes.forEach(vote => {
+                electoralVotesString +=
+                    '<div>' +
+                    '<span class="candidate-square type' + vote.type + '"></span>' +
+                    '<span class="candidate-bold">' + vote.electoralVotes + '</span> electoral ' + (vote.electoralVotes == '1' ? 'vote' : 'votes') + ' going to ' +
+                    '<span class="candidate-bold">' + vote.name + '</span> ' +
+                    '</div>';
+            });
+
+            electoralVotesString += '</div>';
+        }
 
         html += electoralVotesString;
 

@@ -72,13 +72,17 @@ export class VotesService {
             if(result[year] === undefined) { return result; }
 
             let votes = result[year],
-                total = votes.total,
+                total = 0,
+                gopType = 0,
                 democracyType = 1,
                 democracyCount = 0;
 
             votes.votes.forEach(candidateVotes => {
                 if(democracyType === candidateVotes.CandidateType) {
                     democracyCount = candidateVotes.VotesCount;
+                    total += candidateVotes.VotesCount;
+                } else if(gopType === candidateVotes.CandidateType) {
+                    total += candidateVotes.VotesCount;
                 }
             });
 
@@ -118,6 +122,10 @@ export class VotesService {
                                 candidatesData[name].electoral += electoral;
                             }
                         });
+
+                        if(stateResult.AvailableElectoralVotes) {
+                            candidatesData["Other"].electoral += stateResult.AvailableElectoralVotes;
+                        }
                     });
 
                     result[yearData.Year] = {
