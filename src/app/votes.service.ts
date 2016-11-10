@@ -11,7 +11,7 @@ export class VotesService {
 
         this.promise = Observable.forkJoin(
             this.http.get('data/US2012Results.json').map((res: Response) => res.json()),
-            // this.http.get('data/US2016Results.json').map((res: Response) => res.json()),
+            this.http.get('data/US2016Results.json').map((res: Response) => res.json()),
             this.http.get('data/postals.json').map((res: Response) => res.json())
         ).toPromise();
     }
@@ -21,8 +21,8 @@ export class VotesService {
         return new Promise((resolve, rejected) => {
             this.promise.then(data => {
                 resolve({
-                    fullData: [data[0]/*, data[1] */], // 2016
-                    postal: data[1]
+                    fullData: [data[0], data[1]],
+                    postal: data[2]
                 });
             });
         });
