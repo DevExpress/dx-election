@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { DxScrollViewComponent } from 'devextreme-angular2/ui/scroll-view';
+import { DxScrollViewComponent } from 'devextreme-angular/ui/scroll-view';
 
 @Component({
     selector: 'app-detailed-chart',
