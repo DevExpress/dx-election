@@ -1,7 +1,7 @@
 import { Component, Input, Output, ViewChild, EventEmitter } from '@angular/core';
 import { StatesService } from '../states.service';
 import { CountiesService } from '../counties.service';
-import { DxVectorMapComponent } from 'devextreme-angular2/ui/vector-map';
+import { DxVectorMapComponent } from 'devextreme-angular/ui/vector-map';
 
 @Component({
     selector: 'app-map',
