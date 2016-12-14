@@ -8,10 +8,10 @@ import { MapComponent } from './map/map.component';
 import { DetailedChartComponent } from './detailed-chart/detailed-chart.component';
 import { FooterComponent } from './footer/footer.component';
 
-import { DxButtonModule } from 'devextreme-angular/ui/button';
-import { DxChartModule } from 'devextreme-angular/ui/chart';
-import { DxScrollViewModule } from 'devextreme-angular/ui/scroll-view';
-import { DxVectorMapModule } from 'devextreme-angular/ui/vector-map';
+import { DxButtonModule,
+         DxChartModule,
+         DxScrollViewModule,
+         DxVectorMapModule } from 'devextreme-angular';
 import { HttpModule } from '@angular/http';
 
 @NgModule({
