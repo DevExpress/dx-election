@@ -22,16 +22,16 @@ export class MapComponent {
         customizeTooltip: this.customizeTooltip.bind(this),
         enabled: true
     };
-    private title: string = '&nbsp;';
-    private subtitle: string = '&nbsp;';
-    private usaLayerOpacity: number = 1;
+    private title = '&nbsp;';
+    private subtitle = '&nbsp;';
+    private usaLayerOpacity = 1;
 
     private dataSource: any = null;
     private countyDataSource: any = null;
 
-    private showBackButton: boolean = false;
+    private showBackButton = false;
 
-    private isMapCentered: boolean = true;
+    private isMapCentered = true;
     private currentMapCenter: Array<any> = [];
 
     @Input() private year: string;
@@ -101,10 +101,10 @@ export class MapComponent {
     }
 
     customizeTooltip(info: any){
-        let html: string = '<div class="tooltip-name">' + info.attribute('NAME') + '</div>',
+        let html = '<div class="tooltip-name">' + info.attribute('NAME') + '</div>',
             votesObj: any = info.attribute('votes')[this.year],
             votesArray: Array<any> = votesObj.votes,
-            total: number = votesObj.total,
+            total = votesObj.total,
             electoralVotes: Array<any> = [],
             votesString = '',
             electoralVotesString = '';
