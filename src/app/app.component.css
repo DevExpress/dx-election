@@ -29,7 +29,7 @@ header {
     font-size: 35px;
     line-height: 40px;
     border-bottom: 1px solid #f2f2f2;
-    background-image: url(images/flag-bg.jpg);
+    background-image: url(../images/flag-bg.jpg);
     background-repeat: no-repeat;
     background-position: right;
 }

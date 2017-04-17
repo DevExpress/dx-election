@@ -15,7 +15,7 @@
 
 .dx-copy .logo {
     float: right;
-    background-image: url(images/footer-logo.png);
+    background-image: url(../../images/footer-logo.png);
     background-repeat: no-repeat;
     background-position: center;
     width: 157px;

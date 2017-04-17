@@ -14,7 +14,7 @@
 .years .year.active {
     color: #3689d6;
     cursor: default;
-    background-image: url(images/arrow.png);
+    background-image: url(../../images/arrow.png);
     background-size: 26px 18px;
     background-repeat: no-repeat;
     background-position: center bottom;

@@ -74,12 +74,12 @@
 }
 
 .left-chart-wrapper .data .electoral:first-child {
-    background-image: url(images/arrow-down.png);
+    background-image: url(../../images/arrow-down.png);
     background-position: center bottom;
 }
 
 .left-chart-wrapper .data .electoral:last-child {
-    background-image: url(images/arrow-up.png);
+    background-image: url(../../images/arrow-up.png);
     background-position: center top;
 }
 
