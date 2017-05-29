@@ -1,5 +1,5 @@
 # DX Election
-A sample Angular 2 application designed to display election results from the US Presidential Election. The app uses the DevExtreme Data Visualization Controls to display Electoral College votes by individual States and vote results at the county level for each State.
+A sample Angular application designed to display election results from the US Presidential Election. The app uses the DevExtreme Data Visualization Controls to display Electoral College votes by individual States and vote results at the county level for each State.
 
 For more information about DevExtreme, please visit [https://js.devexpress.com/](https://js.devexpress.com/).
 
