@@ -10,8 +10,8 @@ import { VotesService } from './votes.service';
 
 export class AppComponent {
 
-    private currentYear = '2016';
-    private data: any;
+    currentYear = '2016';
+    data: any;
 
     constructor() { }
 

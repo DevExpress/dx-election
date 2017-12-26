@@ -21,8 +21,8 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
-    "devextreme": "~17.2.1-pre-17298",
-    "devextreme-angular": "~17.2.1-beta.3",
+    "devextreme": "~17.2.4",
+    "devextreme-angular": "~17.2.4",
     "jquery": "~3.1.1",
     "rxjs": "^5.1.0",
     "ts-helpers": "~1.1.1",
@@ -30,7 +30,7 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.1",
+    "@angular/cli": "~1.4.8",
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
@@ -47,6 +47,6 @@
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
-    "typescript": "^2.3.4"
+    "typescript": "^2.4.2"
   }
 }

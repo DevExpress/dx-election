@@ -16,25 +16,25 @@ export class MapComponent {
     private defaultBounds: Array<number> = [-130, 23, -59, 49];
 
     private layers: Array<any> = [];
-    private bounds: Array<number> = this.defaultBounds;
+    bounds: Array<number> = this.defaultBounds;
     private prevBounds: Array<number> = this.defaultBounds;
-    private tooltip: any = {
+    tooltip: any = {
         customizeTooltip: this.customizeTooltip.bind(this),
         enabled: true
     };
-    private title = '&nbsp;';
-    private subtitle = '&nbsp;';
-    private usaLayerOpacity = 1;
+    title = '&nbsp;';
+    subtitle = '&nbsp;';
+    usaLayerOpacity = 1;
 
-    private dataSource: any = null;
-    private countyDataSource: any = null;
+    dataSource: any = null;
+    countyDataSource: any = null;
 
-    private showBackButton = false;
+    showBackButton = false;
 
-    private isMapCentered = true;
+    isMapCentered = true;
     private currentMapCenter: Array<any> = [];
 
-    @Input() private year: string;
+    @Input() year: string;
 
     @Output() onViewChanged = new EventEmitter<any>();
 
