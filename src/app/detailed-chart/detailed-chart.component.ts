@@ -13,7 +13,7 @@ export class DetailedChartComponent {
 
     private _year: string;
     private dataSource: any;
-    private statesChartData: any = [];
+    statesChartData: any = [];
 
     @Input()
     set year(year: string) {

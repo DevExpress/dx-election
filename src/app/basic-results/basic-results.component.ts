@@ -10,7 +10,7 @@ import { VotesService } from '../votes.service';
 
 export class BasicResultsComponent {
 
-    private nationData: any;
+    nationData: any;
     private chartData: Array<any>;
     private series: Array<any>;
     @Input() private _year: string;

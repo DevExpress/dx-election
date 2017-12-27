@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class YearSwitcherComponent {
-    @Input() private year: string;
+    @Input() year: string;
     @Output() onYearChanged = new EventEmitter<string>();
 
     changeYear(year: string) {
