@@ -12,6 +12,11 @@
     color: #808080;
 }
 
+::ng-deep .back-button .dx-button-content,
+::ng-deep .center-button .dx-button-content {
+    padding: 7px 15px 8px;
+}
+
 .back-button {
     float: left;
 }
