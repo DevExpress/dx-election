@@ -38,7 +38,7 @@ export class MapComponent {
 
     @Output() onViewChanged = new EventEmitter<any>();
 
-    constructor(private statesService: StatesService, private countiesService: CountiesService){
+    constructor(private statesService: StatesService, private countiesService: CountiesService) {
         this.loadStatesMap();
     }
 
@@ -51,13 +51,13 @@ export class MapComponent {
     }
 
     mapClick(e: any) {
-        if(e.target === undefined) { return; }
+        if (e.target === undefined) { return; }
 
         let code = e.target.attribute('STATEFP');
         let stateName = e.target.attribute('NAME');
 
-        if(e.target.layer.index !== 0) { return; }// counties layer
-        if(code === '02' || code === '15') { return; } // no data for Alaska & Hawaii
+        if (e.target.layer.index !== 0) { return; }// counties layer
+        if (code === '02' || code === '15') { return; } // no data for Alaska & Hawaii
 
         this.bounds = this.statesService.getBoundsByCode(code);
         this.isMapCentered = true;
@@ -89,10 +89,11 @@ export class MapComponent {
     }
 
     centerChanged(e: any) {
-        if(this.prevBounds !== this.bounds)
+        if (this.prevBounds !== this.bounds) {
             this.currentMapCenter = e.center;
-        else
-            this.isMapCentered = this.currentMapCenter[0] == e.center[0] && this.currentMapCenter[1] == e.center[1];
+        } else {
+            this.isMapCentered = this.currentMapCenter[0] === e.center[0] && this.currentMapCenter[1] === e.center[1];
+        }
         this.prevBounds = this.bounds;
     }
 
@@ -100,7 +101,7 @@ export class MapComponent {
         this.currentMapCenter = e.component.instance().center();
     }
 
-    customizeTooltip(info: any){
+    customizeTooltip(info: any) {
         let html = '<div class="tooltip-name">' + info.attribute('NAME') + '</div>',
             votesObj: any = info.attribute('votes')[this.year],
             votesArray: Array<any> = votesObj.votes,
@@ -116,11 +117,11 @@ export class MapComponent {
                 type = vote.CandidateType,
                 electoral = vote.ElectoralVotes;
 
-            if(electoral > 0) {
+            if (electoral > 0) {
                 electoralVotes.push({ name: name, electoralVotes: electoral, type: type });
             }
 
-            if(count > 0) {
+            if (count > 0) {
                 votesString += (
                     '<div>' +
                     '<span class="candidate-square type' + type + '"></span>' +
@@ -134,14 +135,15 @@ export class MapComponent {
 
         html += votesString;
 
-        if(electoralVotes.length > 0) {
+        if (electoralVotes.length > 0) {
             electoralVotesString += '<div class="electoral-votes">';
 
             electoralVotes.forEach(vote => {
                 electoralVotesString +=
                     '<div>' +
                     '<span class="candidate-square type' + vote.type + '"></span>' +
-                    '<span class="candidate-bold">' + vote.electoralVotes + '</span> electoral ' + (vote.electoralVotes == '1' ? 'vote' : 'votes') + ' going to ' +
+                    '<span class="candidate-bold">' + vote.electoralVotes + '</span> electoral ' +
+                        (vote.electoralVotes === '1' ? 'vote' : 'votes') + ' going to ' +
                     '<span class="candidate-bold">' + vote.name + '</span> ' +
                     '</div>';
             });

@@ -4,7 +4,6 @@ import { VotesService } from './votes.service';
 
 @Injectable()
 export class StatesService {
-
     private statesBounds: Object = {};
 
     constructor(private votes: VotesService) { }
@@ -17,10 +16,10 @@ export class StatesService {
                 let lon = dot[0],
                     lat = dot[1];
 
-                if(minLon === undefined || minLon > lon) { minLon = lon; }
-                if(maxLon === undefined || maxLon < lon) { maxLon = lon; }
-                if(minLat === undefined || minLat > lat) { minLat = lat; }
-                if(maxLat === undefined || maxLat < lat) { maxLat = lat; }
+                if (minLon === undefined || minLon > lon) { minLon = lon; }
+                if (maxLon === undefined || maxLon < lon) { maxLon = lon; }
+                if (minLat === undefined || minLat > lat) { minLat = lat; }
+                if (maxLat === undefined || maxLat < lat) { maxLat = lat; }
             });
         });
 
@@ -32,7 +31,7 @@ export class StatesService {
             MapUtils.parseMapData('data/usa', (data) => {
 
                 data.features.sort((a, b) => {
-                    if(a.properties['NAME'] > b.properties['NAME']) {
+                    if (a.properties['NAME'] > b.properties['NAME']) {
                         return 1;
                     } else {
                         return -1;

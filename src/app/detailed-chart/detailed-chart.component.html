@@ -1,55 +1,28 @@
 <div class="state-chart">
     <dx-scroll-view [height]="660" class="scroll-view">
-        <dx-chart 
-            class="votes-chart"
-            [dataSource]="statesChartData"
-            [commonAxisSettings]="{
-                grid: { 
-                    visible: false 
-                }
-            }"
-            [barWidth]="0.9"
-            [series]= "[{
-                valueField: 'VotesPercent0',
-                color: '#3688d5'
-            }, {
-                valueField: 'VotesPercent1',
-                color: '#e45252'
-            }]"
-            [valueAxis]="{
-                maxValueMargin: 0.1,
-                max: 100,
-                label: {
-                    visible: false,
-                    overlappingBehavior: 'ignore'
-                }
-            }"
-            [argumentAxis]= "{
-                inverted: true,
-                label:{
-                    customizeText: customizeArgLabelText,
-                    font: {
-                        size: 13
-                    }
-                }
-            }"
-            [commonSeriesSettings]="{
-                argumentField: 'name',
-                type: 'bar',
-                label: {
-                    visible: true,
-                    backgroundColor: 'none',
-                    customizeText: customizeVoteLabelText,
-                    font: {
-                        size: 12
-                    }
-                }
-            }"
-            [size]="{
-                height: statesChartData.length * 60
-            }"
-            [legend]="{ visible: false }"
-            [rotated]="true">
+        <dx-chart class="votes-chart" [dataSource]="statesChartData" [rotated]="true">
+            <dxo-common-series-settings argumentField="name" type="bar" [barPadding]="0.1">
+                <dxo-label [visible]="true" backgroundColor="none" [customizeText]="customizeVoteLabelText">
+                    <dxo-font [size]="12"></dxo-font>
+                </dxo-label>
+            </dxo-common-series-settings>
+            <dxo-common-axis-settings>
+                <dxo-grid [visible]="false"></dxo-grid>
+            </dxo-common-axis-settings>
+            <dxo-argument-axis [inverted]="true">
+                <dxo-label [customizeText]="customizeArgLabelText">
+                    <dxo-font [size]="13"></dxo-font>
+                </dxo-label>
+            </dxo-argument-axis>
+            <dxo-size [height]="statesChartData.length * 60"></dxo-size>
+            <dxo-legend [visible]="false"></dxo-legend>
+
+            <dxi-value-axis [maxValueMargin]="0.1" [max]="100">
+                <dxo-label [visible]="false" overlappingBehavior="ignore"></dxo-label>
+            </dxi-value-axis>
+            
+            <dxi-series valueField="VotesPercent0" color="#3688d5"></dxi-series>
+            <dxi-series valueField="VotesPercent1" color="#e45252"></dxi-series>
         </dx-chart>
     </dx-scroll-view>
 </div>

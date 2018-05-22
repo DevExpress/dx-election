@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { forkJoin } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class VotesService {
@@ -9,14 +10,14 @@ export class VotesService {
 
     constructor(private http: Http) {
 
-        this.promise = Observable.forkJoin(
-            this.http.get('data/US2012Results.json').map((res: Response) => res.json()),
-            this.http.get('data/US2016Results.json').map((res: Response) => res.json()),
-            this.http.get('data/postals.json').map((res: Response) => res.json())
+        this.promise = forkJoin(
+            this.http.get('data/US2012Results.json').pipe(map((res: Response) => res.json())),
+            this.http.get('data/US2016Results.json').pipe(map((res: Response) => res.json())),
+            this.http.get('data/postals.json').pipe(map((res: Response) => res.json()))
         ).toPromise();
     }
 
-    getFullData() : Promise<any> {
+    getFullData(): Promise<any> {
 
         return new Promise((resolve, rejected) => {
             this.promise.then(data => {
@@ -33,7 +34,7 @@ export class VotesService {
         let result: any = {};
         data.fullData.forEach(yearData => {
             yearData.Votes.forEach(stateResult => {
-                if(stateResult.State !== postal) { return; }
+                if (stateResult.State !== postal) { return; }
 
                 result[yearData.Year] = {
                     total: stateResult.TotalVotesCount,
@@ -44,16 +45,16 @@ export class VotesService {
         return this.setDemocracyResultsForYears(result);
     }
 
-    getResultForCounty(fp: string, fips: string, data: any) : any {
+    getResultForCounty(fp: string, fips: string, data: any): any {
         let postal = data.postal[fp],
             result: any = {};
 
         data.fullData.forEach(yearData => {
             yearData.Votes.forEach(stateResult => {
-                if(stateResult.State !== postal) { return; }
+                if (stateResult.State !== postal) { return; }
 
                 stateResult.CountyVotes.forEach(countyResult => {
-                    if(countyResult.FIPS !== fips) { return; }
+                    if (countyResult.FIPS !== fips) { return; }
 
                     result[yearData.Year] = {
                         total: countyResult.TotalVotesCount,
@@ -66,10 +67,10 @@ export class VotesService {
         return this.setDemocracyResultsForYears(result);
     }
 
-    setDemocracyResultsForYears(result){
+    setDemocracyResultsForYears(result) {
         ['2012', '2016'].forEach(year => {
 
-            if(result[year] === undefined) { return result; }
+            if (result[year] === undefined) { return result; }
 
             let votes = result[year],
                 total = 0,
@@ -78,10 +79,10 @@ export class VotesService {
                 democracyCount = 0;
 
             votes.votes.forEach(candidateVotes => {
-                if(democracyType === candidateVotes.CandidateType) {
+                if (democracyType === candidateVotes.CandidateType) {
                     democracyCount = candidateVotes.VotesCount;
                     total += candidateVotes.VotesCount;
-                } else if(gopType === candidateVotes.CandidateType) {
+                } else if (gopType === candidateVotes.CandidateType) {
                     total += candidateVotes.VotesCount;
                 }
             });
@@ -109,7 +110,7 @@ export class VotesService {
                                 electoral = vote.ElectoralVotes,
                                 count = vote.VotesCount;
 
-                            if(candidatesData[name] === undefined) {
+                            if (candidatesData[name] === undefined) {
                                 keysArray.push(name);
                                 candidatesData[name] = {
                                     type: type,
@@ -123,8 +124,8 @@ export class VotesService {
                             }
                         });
 
-                        if(stateResult.AvailableElectoralVotes) {
-                            candidatesData["Other"].electoral += stateResult.AvailableElectoralVotes;
+                        if (stateResult.AvailableElectoralVotes) {
+                            candidatesData['Other'].electoral += stateResult.AvailableElectoralVotes;
                         }
                     });
 

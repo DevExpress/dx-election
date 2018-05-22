@@ -17,25 +17,14 @@
                 <span class="description">Electoral Votes</span><br /><span class="number" [innerHtml]="nationData?.r?.electoral"></span>
             </div>
         </div>
-        <dx-chart 
-            class="big-chart"
-            [animation]="{ enabled: false }"
-            [dataSource]="chartData"
-            [commonSeriesSettings]="{
-                argumentField: 'votesType',
-                type: 'fullStackedBar'
-            }"
-            [commonAxisSettings]="{
-                grid: { 
-                    visible: false 
-                },
-                label: {
-                    visible: false
-                }
-            }"
-            [series]="series"
-            [legend]="{ visible: false }"
-            [rotated]="true">
+        <dx-chart class="big-chart" [dataSource]="chartData" [series]="series" [rotated]="true">
+            <dxo-common-series-settings argumentField="votesType" type="fullStackedBar"></dxo-common-series-settings>
+            <dxo-common-axis-settings>
+                <dxo-grid [visible]="false"></dxo-grid>
+                <dxo-label [visible]="false"></dxo-label>
+            </dxo-common-axis-settings>
+            <dxo-animation [enabled]="false"></dxo-animation>
+            <dxo-legend [visible]="false"></dxo-legend>
         </dx-chart>
         <div class="electoral">
             <div class="center">50%</div>
