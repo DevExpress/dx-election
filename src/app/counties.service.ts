@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
 import { MapUtils } from './maputils';
 import { VotesService } from './votes.service';
 
 @Injectable()
 export class CountiesService {
-
     private promise: Promise<any>;
 
     constructor(private votes: VotesService) {
@@ -22,7 +19,7 @@ export class CountiesService {
                         let stateFp = feature.properties['STATEFP'],
                             fips = feature.properties['GEOID'];
 
-                        if(featureCollection[stateFp] === undefined) {
+                        if (featureCollection[stateFp] === undefined) {
                             featureCollection[stateFp] = [];
                         }
 
@@ -51,7 +48,7 @@ export class CountiesService {
 
             this.promise.then(featureCollection => {
                 result.features = featureCollection[stateFp].sort((a, b) => {
-                    if(a.properties['NAME'] > b.properties['NAME']) { 
+                    if (a.properties['NAME'] > b.properties['NAME']) {
                         return 1;
                     } else {
                         return -1;

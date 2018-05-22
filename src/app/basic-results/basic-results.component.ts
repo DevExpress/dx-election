@@ -9,7 +9,6 @@ import { VotesService } from '../votes.service';
 })
 
 export class BasicResultsComponent {
-
     nationData: any;
     private chartData: Array<any>;
     private series: Array<any>;
@@ -21,7 +20,7 @@ export class BasicResultsComponent {
         this.loadChartData();
     }
 
-    constructor(private votes: VotesService){
+    constructor(private votes: VotesService) {
         this.loadChartData();
     }
 
@@ -63,14 +62,14 @@ export class BasicResultsComponent {
         });
     }
 
-    fillCandidatesData(data: any){
+    fillCandidatesData(data: any) {
         let dataForNation: any = { d: {}, r: {} },
             total = 0;
 
         data.keys.forEach(key => {
             let type = data.data[key].type;
 
-            if(type === 2) {
+            if (type === 2) {
                 return;
             }
 
@@ -87,5 +86,4 @@ export class BasicResultsComponent {
 
         this.nationData = dataForNation;
     }
-
 }

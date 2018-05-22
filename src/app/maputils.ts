@@ -10,22 +10,22 @@ export class MapUtils {
     }
 
     private static requestBinarySources(sourcePath: string) {
-        return ["shp", "dbf"].map(function(key) {
+        return ['shp', 'dbf'].map(function(key) {
             return new Promise((resolve, reject) => {
-                MapUtils.sendRequest(sourcePath + "." + key).then(response => {
+                MapUtils.sendRequest(sourcePath + '.' + key).then(response => {
                     resolve({ key: key, response: response });
                 });
             });
         });
     }
 
-    private static sendRequest(url: string) : Promise<any> {
+    private static sendRequest(url: string): Promise<any> {
         return new Promise(
             (resolve, reject) => {
-                var request = new XMLHttpRequest();
-                request["onreadystatechange"] = function() {
-                    if(this.readyState === 4) {
-                        if(this.status === 200) {
+                let request = new XMLHttpRequest();
+                request['onreadystatechange'] = function() {
+                    if (this.readyState === 4) {
+                        if (this.status === 200) {
                             resolve(this.response);
                         } else {
                             resolve(null);

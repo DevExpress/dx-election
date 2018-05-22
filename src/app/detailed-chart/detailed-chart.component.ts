@@ -8,8 +8,7 @@ import { DxScrollViewComponent } from 'devextreme-angular/ui/scroll-view';
 })
 
 export class DetailedChartComponent {
-
-    @ViewChild(DxScrollViewComponent) scrollView:DxScrollViewComponent;
+    @ViewChild(DxScrollViewComponent) scrollView: DxScrollViewComponent;
 
     private _year: string;
     private dataSource: any;
@@ -28,8 +27,7 @@ export class DetailedChartComponent {
     }
 
     processChartData() {
-
-        if(!this.dataSource) {
+        if (!this.dataSource) {
             return;
         }
 
@@ -66,5 +64,4 @@ export class DetailedChartComponent {
         let parsedArg = arg.value.split('_');
         return '<span style="font-weight: bold; color:' + parsedArg[1] + ';">' + parsedArg[0] + '</span>';
     }
-
 }

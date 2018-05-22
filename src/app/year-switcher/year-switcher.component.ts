@@ -11,9 +11,8 @@ export class YearSwitcherComponent {
     @Output() onYearChanged = new EventEmitter<string>();
 
     changeYear(year: string) {
-        if(year === this.year) { return; }
+        if (year === this.year) { return; }
         this.year = year;
         this.onYearChanged.emit(this.year);
     }
 }
-
