@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -8,12 +8,12 @@ export class VotesService {
 
     private promise: Promise<any>;
 
-    constructor(private http: Http) {
+    constructor(private http: HttpClient) {
 
         this.promise = forkJoin(
-            this.http.get('data/US2012Results.json').pipe(map((res: Response) => res.json())),
-            this.http.get('data/US2016Results.json').pipe(map((res: Response) => res.json())),
-            this.http.get('data/postals.json').pipe(map((res: Response) => res.json()))
+            this.http.get('data/US2012Results.json').pipe(map((res: HttpResponse<any>) => res)),
+            this.http.get('data/US2016Results.json').pipe(map((res: HttpResponse<any>) => res)),
+            this.http.get('data/postals.json').pipe(map((res: HttpResponse<any>) => res))
         ).toPromise();
     }
 
