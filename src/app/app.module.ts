@@ -12,7 +12,7 @@ import { DxButtonModule,
          DxChartModule,
          DxScrollViewModule,
          DxVectorMapModule } from 'devextreme-angular';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -21,7 +21,7 @@ import { HttpModule } from '@angular/http';
       DxChartModule,
       DxButtonModule,
       DxScrollViewModule,
-      HttpModule
+      HttpClientModule
   ],
   declarations: [
     AppComponent,
