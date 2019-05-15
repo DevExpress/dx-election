@@ -10,6 +10,7 @@
     position: relative;
     top: 44px;
     color: #808080;
+    z-index: 1;
 }
 
 ::ng-deep .back-button .dx-button-content,
