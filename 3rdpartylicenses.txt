@@ -1,4 +1,4 @@
-devextreme@18.2.3
+devextreme@18.2.8
 SEE LICENSE IN README.md
 SEE LICENSE IN README.md
 
@@ -60,11 +60,11 @@ If the Work includes a "NOTICE" text file as part of its distribution, then any 
 
 END OF TERMS AND CONDITIONS
 
-@angular/common@7.0.3
+@angular/common@7.2.15
 MIT
 MIT
 
-rxjs@6.3.3
+rxjs@6.5.2
 Apache-2.0
 Apache License
                          Version 2.0, January 2004
@@ -268,7 +268,7 @@ Apache License
  See the License for the specific language governing permissions and
  limitations under the License.
 
-devextreme-angular@18.2.3
+devextreme-angular@18.2.8
 MIT
 The MIT License (MIT)
 
@@ -292,17 +292,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-jszip@3.1.5
+jszip@3.2.1
 (MIT OR GPL-3.0)
 (MIT OR GPL-3.0)
 
-@angular/platform-browser@7.0.3
+@angular/platform-browser@7.2.15
 MIT
 MIT
 
-core-js@2.5.7
+core-js@2.6.5
 MIT
-Copyright (c) 2014-2018 Denis Pushkarev
+Copyright (c) 2014-2019 Denis Pushkarev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -322,7 +322,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-zone.js@0.8.26
+zone.js@0.8.29
 MIT
 The MIT License
 
@@ -346,6 +346,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-@angular/core@7.0.3
+@angular/core@7.2.15
 MIT
 MIT
