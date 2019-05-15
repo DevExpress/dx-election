@@ -20,7 +20,8 @@ export class MapComponent {
     private prevBounds: Array<number> = this.defaultBounds;
     tooltip: any = {
         customizeTooltip: this.customizeTooltip.bind(this),
-        enabled: true
+        enabled: true,
+        zIndex: 10
     };
     title = '&nbsp;';
     subtitle = '&nbsp;';
