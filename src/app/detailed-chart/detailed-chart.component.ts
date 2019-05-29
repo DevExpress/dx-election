@@ -8,7 +8,7 @@ import { DxScrollViewComponent } from 'devextreme-angular/ui/scroll-view';
 })
 
 export class DetailedChartComponent {
-    @ViewChild(DxScrollViewComponent) scrollView: DxScrollViewComponent;
+    @ViewChild(DxScrollViewComponent, { static: false }) scrollView: DxScrollViewComponent;
 
     private _year: string;
     private dataSource: any;
