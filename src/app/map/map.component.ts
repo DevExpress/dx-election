@@ -11,7 +11,7 @@ import { DxVectorMapComponent } from 'devextreme-angular/ui/vector-map';
 })
 
 export class MapComponent {
-    @ViewChild(DxVectorMapComponent) vectorMap: DxVectorMapComponent;
+    @ViewChild(DxVectorMapComponent, { static: false }) vectorMap: DxVectorMapComponent;
 
     private defaultBounds: Array<number> = [-130, 23, -59, 49];
 
